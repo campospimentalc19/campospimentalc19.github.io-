@@ -105,25 +105,27 @@
 
     <style>
         html {
-         
+            /* stół */
             --tableWidth: 700px;
             --tableHeight: 400px;
+            /* rakietka */
             --paddleWidth: 25px;
             --paddleHeight: 80px;
             --paddleColor: yellow;
+            /* piłka */
             --ballSize: 20px;
             --ballColor: white;
+            /* pozycja */
             --paddleFromEdge: 50px;
+            /* czas animacji */
             --animationTime: 5s;
         }
-
         .table,
         .ball,
         .paddle,
         .result {
             position: absolute;
         }
-
         .table {
             width: var(--tableWidth);
             height: var(--tableHeight);
@@ -133,7 +135,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
         .ball {
             width: var(--ballSize);
             height: var(--ballSize);
@@ -141,133 +142,103 @@
             left: calc(50% - var(--ballSize)/2);
             background-color: var(--ballColor);
             border-radius: 50%;
-
+            /* Stwórz animację ballMove */
             animation: ballMove var(--animationTime) linear both;
-
         }
-
         .paddle {
             width: var(--paddleWidth);
             height: var(--paddleHeight);
             background-color: var(--paddleColor);
         }
-
-
+        /* rakietka lewa strona */
         .player {
             top: calc(50% - var(--paddleHeight)/2);
-
             left: var(--paddleFromEdge);
+            /* utwórz animację ruchu dla paletki po lewej stronie */
             animation: playerPaddle var(--animationTime) linear both;
         }
-
         /* prawa strona */
-
         .ai {
             top: calc(50% - var(--paddleHeight)/2);
             right: var(--paddleFromEdge);
+            /* utwórz animację ruchu dla paletki po prawej stronie */
             animation: aiPaddle var(--animationTime) linear both;
         }
-
         .result {
-
             width: 100%;
             left: 0;
             top: 10%;
             text-transform: uppercase;
             text-align: center;
             font-family: sans-serif;
-
             color: black;
             transform: scale(0);
+            /* Utwórz animację, któa pokaże wynik po zakończeniu gry */
             animation: showResult 1s calc(var(--animationTime) + 1s) both;
         }
-
-
         @keyframes ballMove {
-
-            
+            /* left: 75px - lewa */
+            /* left: 605px - prawa */
+            /* top: 0 - góra */
+            /* top: 380px - góra */
+            /* left: 340px - środek */
+            /* do pokonania 530px (między rakietkami) na 40% czyli 13px na 1% - prędkość piłki*/
+            /* 0% {
+        top: calc(50% - var(--ballSize)/2);
+        left: calc(50% - var(--ballSize)/2);
       } */
             20% {
                 top: 340px;
+                /* left: calc(var(--tableWidth) - var(--paddleFromEdge) - var(--paddleWidth) - var(--ballSize)); */
                 left: 605px;
             }
-
             22% {
                 top: 380px;
                 left: 565px;
             }
-
             58% {
                 top: 80px;
                 left: 75px;
             }
-
             90% {
                 top: 0px;
                 left: 570px;
             }
-
             100% {
                 top: 60px;
                 left: 700px;
             }
-
         }
-
-
         @keyframes playerPaddle {
             40% {
                 top: calc(50% - var(--paddleHeight)/2);
-
             }
-
-
-
             58% {
                 top: 40px;
-
             }
-
-
-
             100% {
                 top: calc(50% - var(--paddleHeight)/2);
-
             }
         }
-
-
         @keyframes aiPaddle {
             20% {
                 top: 300px;
-
-
             }
-
-
-
             75% {
                 top: calc(50% - var(--paddleHeight)/2);
-
             }
-
             90% {
                 top: 65px;
-
             }
-
             100% {
                 top: 50px;
-
             }
         }
-
         @keyframes showResult {
             100% {
                 transform: scale(1);
             }
         }
-
     </style>
 </head>
 
