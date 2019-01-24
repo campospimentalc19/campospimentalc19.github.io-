@@ -1,102 +1,93 @@
- <body>
-  
-<style>
-body {
-  background-color: coral;
-}
-</style>
-</head>
-<body/
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link href="soccer.css" rel="stylesheet" />
-<link rel="shortcut icon" href="soccerIcon.ico">
-<style type="css"> body {background-image: fifabg.jpeg;}</style>
-<meta http-equiv="refresh" content="60"  /> 
-<meta name="description" content="Soccer History and current teams" />
-<title>All About Soccer</title>
+	<meta charset="UTF-8">
+	<title>Tic&ndash;Tac&ndash;Toe</title>
+	<link href="assets/css/main.css" rel="stylesheet">
 </head>
-
 <body>
-<table border="5px" bordercolor="#000000">
-    <tr>
-        <td><a href="Rules.html">Rules of Soccer</a></td>
-    </tr>
-    <tr>
-        <td><a href="History.html">History of the Sport</a></td>
-    </tr>
-    <tr>
-        <td><a href="Best Soccer Videos.html">Best Soccer Videos</a></td>
-    </tr>
-    <tr>
-        <td><a href="HooliganismCelebrations.html">Hooliganism/Celebrations</a></td>
-    </tr>
-    <tr>
-        <td><a href="MLSteams.html">MLS Teams</a></td>
-	</tr>
-</table>
 
-<div id="indent" class="content">
-	<h1>
-	<font>
-	The World Cup
-	</font>
-	</h1>
-	<h2>
-	<i>
-	-The Greatest Tournament in the World
-	</i>
-	</h2>
+	<main>
+		<form id="tic-tac-form">
+			<table>
+				<caption><h1><noscript>Please Enable JavaScript to </noscript>Play Tic&ndash;Tac&ndash;Toe with a Friend</h1></caption>
+				<tbody>
+					<tr>
+						<td class="empty square">
+							<label for="row-one-col-one">Row one column one <span>unplayed</span></label>
+							<input type="checkbox" name="row-one-col-one" aria-describedby="game-reads"  />
+							 <span></span>
+						</td>
+						<td class="empty square">
+							<label for="row-one-col-two" >Row one column two <span>unplayed</span></label>
+							<input type="checkbox" name="row-one-col-two" aria-describedby="game-reads" />
+							 <span></span>
+						</td>
+						<td class="empty square">
+							<label for="row-one-col-three" >Row one column three <span>unplayed</span></label>
+							<input type="checkbox" name="row-one-col-three" aria-describedby="game-reads" />
+							 <span></span>
+						</td>
+					</tr>
+					<tr>
+						<td class="empty square">
+							<label for="row-two-col-one" >Row two column one <span>unplayed</span></label>
+							<input type="checkbox" name="row-two-col-one" aria-describedby="game-reads" />
+							 <span></span>
+						</td>
+						<td class="empty square">
+							<label for="row-two-col-two" >Row two column two <span>unplayed</span></label>
+							<input type="checkbox" name="row-two-col-two" aria-describedby="game-reads" />
+							 <span></span>
+						</td>
+						<td class="empty square">
+							<label for="row-two-col-three" >Row two column three <span>unplayed</span></label>
+							<input type="checkbox" name="row-two-col-three" aria-describedby="game-reads" />
+							 <span></span>
+						</td>
+					</tr>
+					<tr>
+						<td class="empty square">
+							<label for="row-three-col-one" >Row three column one <span>unplayed</span></label>
+							<input type="checkbox" name="row-three-col-one" aria-describedby="game-reads" />
+							 <span></span>
+						</td>
+						<td class="empty square">
+							<label for="row-three-col-two" >Row three column two <span>unplayed</span></label>
+							<input type="checkbox" name="row-three-col-two" aria-describedby="game-reads" />
+							 <span></span>
+						</td>
+						<td class="empty square">
+							<label for="row-three-col-three" >Row three column three <span>unplayed</span></label>
+							<input type="checkbox" name="row-three-col-three" aria-describedby="game-reads" />
+							 <span></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<footer id="console">
+				<div class="messages" role="alert" aria-atomic="true"><p>Player 1's turn (X)</p></div>
+				<aside id="game-reads" style="display:none">
+					<p>
+						<span>Player 1 is X. Player 2 is O. </span>
+						<span class="whos-turn">Player 1</span> is currently <span class="current-square">not on a square</span>.
+					</p>
+					<p>
+						From the upper left the board reads as follows:
+						<span class="board-reads">
 
-	<p>
-	Soccer is one of the most popular sports in the world. It is played in almost every country of the world. The World Cup comes every four years. It brings together all of these countries to compete in one of the biggest tournaments in the world. Click 
-	<a href="http://www.fifa.com/worldcup/index.html" target="_blank">
-	here
-	</a>
-	to learn more about the World Cup.
-	</p>
+						</span>
+					</p>
+				</aside>
+				<button type="reset">Reset</button>
+        <p><small><a href="https://github.com/jpdevries/tic-tac-toe" target="_blank">Source Code</a></small></p>
+			</footer>
+		</form>
+	</main>
 
-	<p>
-	Even though it is one of the most popular sports in the world, it is not as popular in the United States as it is in other countries. The sport is growing in the United States though. It is easy to see this by the amount of people joining different soccer clubs around the country. Also, more professional soccer teams are starting up in different cities to compete against each other in Major League Soccer(MLS). 
-	</p>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+	<script src="assets/js/tic-tac-toe.js"></script>
 
-	<p>
-	I play simply because of love for the sport. It is challenging because you can only use your feet to kick or dribble the ball. This is much harder to do because you do not use your feet to manipulate objects as often as you use your hands. This makes it hard, but very fun. I play club soccer and I play for my high school. Both of these leagues offer different types of competitors. 
-	</p>
-
-	<p>
-	For instance, the club soccer league offers the chance to compete against people your own age. The high school league offers the chance to compete 	against any ages in high school. This means that you could be playing against people that are younger or older than you. It also means that they could be 	more or less experienced than you in the game of soccer. This is good training for if you ever want to join a higher league to play in. 
-	</p>
-
-	<p>
-		Here are the different levels of soccer leagues.
-	<ol>
-  		<li><span>Recreational Soccer</span></li>
-		<li><span>Travel Soccer Clubs</span></li>
-		<li><span>High School Soccer</span></li>
-		<li><span>College Soccer</span></li>
-		<li><span>Semi Professional Leagues (such as NASL)</span></li>
-		<li><span>Major League Soccer (MLS)</span></li>
-		<li><span>Higher professional leagues (such as the English Premiere League)</span></li>
-	</ol>
-	</p>
-
-	<p>
-	If you are interested in playing soccer, a good way to start is to buy a pair of cleats.  To see different styles of cleats click on the picture.
-	</p>
-	<a href="http://store.nike.com/us/en_us/?l=shop,pwp,c-1+100701/hf-10002+12001+4294967140+50144/t-Men's_Soccer_Shoes" target="_blank"> <br /> 
-    <img src="cleats2.jpeg" id="cleats" /></a>
-
-</div>
-
-<br  />
-
-<hr />
-<address>christian</address>
-</font>
 </body>
 </html>
-
