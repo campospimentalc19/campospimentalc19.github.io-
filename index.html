@@ -108,16 +108,12 @@
             /* stół */
             --tableWidth: 700px;
             --tableHeight: 400px;
-            /* rakietka */
             --paddleWidth: 25px;
             --paddleHeight: 80px;
             --paddleColor: yellow;
-            /* piłka */
             --ballSize: 20px;
             --ballColor: white;
-            /* pozycja */
-            --paddleFromEdge: 50px;
-            /* czas animacji */
+            --paddleFromEdge: 100px;
             --animationTime: 5s;
         }
         .table,
@@ -142,7 +138,6 @@
             left: calc(50% - var(--ballSize)/2);
             background-color: var(--ballColor);
             border-radius: 50%;
-            /* Stwórz animację ballMove */
             animation: ballMove var(--animationTime) linear both;
         }
         .paddle {
@@ -150,18 +145,14 @@
             height: var(--paddleHeight);
             background-color: var(--paddleColor);
         }
-        /* rakietka lewa strona */
         .player {
             top: calc(50% - var(--paddleHeight)/2);
             left: var(--paddleFromEdge);
-            /* utwórz animację ruchu dla paletki po lewej stronie */
             animation: playerPaddle var(--animationTime) linear both;
         }
-        /* prawa strona */
         .ai {
             top: calc(50% - var(--paddleHeight)/2);
             right: var(--paddleFromEdge);
-            /* utwórz animację ruchu dla paletki po prawej stronie */
             animation: aiPaddle var(--animationTime) linear both;
         }
         .result {
@@ -173,23 +164,12 @@
             font-family: sans-serif;
             color: black;
             transform: scale(0);
-            /* Utwórz animację, któa pokaże wynik po zakończeniu gry */
             animation: showResult 1s calc(var(--animationTime) + 1s) both;
         }
         @keyframes ballMove {
-            /* left: 75px - lewa */
-            /* left: 605px - prawa */
-            /* top: 0 - góra */
-            /* top: 380px - góra */
-            /* left: 340px - środek */
-            /* do pokonania 530px (między rakietkami) na 40% czyli 13px na 1% - prędkość piłki*/
-            /* 0% {
-        top: calc(50% - var(--ballSize)/2);
-        left: calc(50% - var(--ballSize)/2);
-      } */
+           
             20% {
                 top: 340px;
-                /* left: calc(var(--tableWidth) - var(--paddleFromEdge) - var(--paddleWidth) - var(--ballSize)); */
                 left: 605px;
             }
             22% {
